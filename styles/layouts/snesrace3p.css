@@ -1,0 +1,124 @@
+/* OVERLAY CONFIG */
+/* WARNING: Do not change this unless you know what you're doing */
+
+/* Variables */
+:root {
+  --game-one-x: 0px;
+  --game-one-y: 0px;
+  --game-one-width: 549px;
+  --game-one-height: 480px;
+
+  --game-two-x: 1371px;
+  --game-two-y: 0px;
+  --game-two-width: 549px;
+  --game-two-height: 480px;
+
+  --game-three-x: 0px;
+  --game-three-y: 504px;
+  --game-three-width: 549px;
+  --game-three-height: 480px;
+
+  --host-one-x: 573px;
+  --host-one-y: 0px;
+  --host-one-width: 375px;
+  --host-one-height: 480px;
+
+  --host-two-x: 972px;
+  --host-two-y: 0px;
+  --host-two-width: 375px;
+  --host-two-height: 480px;
+
+  --host-three-x: 573px;
+  --host-three-y: 504px;
+  --host-three-width: 375px;
+  --host-three-height: 480px;
+
+  --social-width: 948px;
+  --social-height: 480px;
+}
+
+/* Layout Path */
+#container #background {
+  clip-path: polygon(
+    calc(var(--host-one-x) + var(--host-one-width)) var(--game-one-y),
+    calc(var(--host-one-x) + var(--host-one-width)) calc(var(--game-one-y) + var(--game-one-height)),
+    var(--host-one-x) calc(var(--game-one-y) + var(--game-one-height)),
+    var(--host-one-x) var(--game-one-y),
+    var(--game-one-width) var(--game-one-y),
+    var(--game-one-width) var(--game-one-height),
+    var(--game-one-x) var(--game-one-height),
+    var(--game-one-x) var(--game-three-y),
+    calc(var(--host-three-x) + var(--host-three-width)) var(--game-three-y),
+    calc(var(--host-three-x) + var(--host-three-width)) calc(var(--game-three-y) + var(--game-three-height)),
+    var(--host-three-x) calc(var(--game-three-y) + var(--game-three-height)),
+    var(--host-three-x) var(--game-three-y),
+    var(--game-three-width) var(--game-three-y),
+    var(--game-three-width) calc(var(--game-three-y) + var(--game-three-height)),
+    var(--game-three-x) calc(var(--game-three-y) + var(--game-three-height)),
+    var(--game-three-x) var(--overlay-height),
+    var(--overlay-width) var(--overlay-height),
+    var(--overlay-width) calc(var(--game-two-y) + var(--game-two-height)),
+    var(--game-two-x) calc(var(--game-two-y) + var(--game-two-height)),
+    var(--game-two-x) var(--game-two-y),
+    calc(var(--host-two-x) + var(--host-two-width)) var(--game-two-y),
+    calc(var(--host-two-x) + var(--host-two-width)) calc(var(--game-two-y) + var(--game-two-height)),
+    var(--host-two-x) calc(var(--game-two-y) + var(--game-two-height)),
+    var(--host-two-x) var(--game-one-y)
+  );
+}
+
+/* Host Name Positions & Dimensions */
+#container #host-one {
+  bottom: calc(var(--bottom-bar-height) + var(--host-three-height) + var(--element-margin));
+  left: var(--host-one-x);
+  width: var(--host-one-width);
+  height: calc(var(--host-one-height) / 5);
+  font-size: calc(var(--info-box-height) / 2);
+}
+
+#container #host-two {
+  bottom: calc(var(--bottom-bar-height) + var(--host-three-height) + var(--element-margin));
+  left: var(--host-two-x);
+  width: var(--host-two-width);
+  height: calc(var(--host-two-height) / 5);
+  font-size: calc(var(--info-box-height) / 2);
+}
+
+#container #host-three {
+  bottom: var(--bottom-bar-height);
+  left: var(--host-three-x);
+  width: var(--host-three-width);
+  height: calc(var(--host-three-height) / 5);
+  font-size: calc(var(--info-box-height) / 2);
+}
+
+/* Info Boxes Position & Dimensions */
+#container #info-boxes {
+  left: var(--host-two-x);
+  bottom: var(--bottom-bar-height);
+  width: var(--social-width);
+  height: var(--info-box-height);
+  overflow-y: visible;
+}
+
+/* Alerts & Chat Position & Dimensions */
+#container #chat,
+#container #alerts {
+  top: calc(var(--game-two-height) + var(--element-margin));
+  left: var(--host-two-x);
+  width: var(--social-width);
+}
+
+#container #chat {
+  height: calc(var(--social-height) - calc(var(--info-box-height) + var(--divider-height)));
+}
+
+#container #alerts {
+  height: var(--social-height);
+}
+
+#container #social-background {
+  display: flex;
+  top: calc(var(--game-one-y) + calc(var(--social-height) / 2));
+  left: calc(calc(var(--game-one-width) + var(--element-margin)) + calc(var(--social-width) / 2));
+}

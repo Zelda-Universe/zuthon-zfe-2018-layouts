@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Brandon Text';
+  font-weight: 400;
+  src: url('../fonts/Brandon Text Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Brandon Text';
+  font-weight: 600;
+  src: url('../fonts/Brandon Text Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Hylia Serif';
+  font-weight: 400;
+  src: url('../fonts/Hylia Serif Regular.otf') format('opentype');
+}
+
+:root {
+  --overlay-width: 1920px;
+  --overlay-height: 1080px;
+  --element-margin: 24px;
+  --bottom-bar-height: 96px;
+  --info-box-height: 73px;
+  --divider-height: 2px;
+}
+
+* {
+  margin: 0;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  background-color: transparent;
+}
+
+#preload {
+  display: none;
+}
