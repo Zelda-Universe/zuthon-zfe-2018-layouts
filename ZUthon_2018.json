@@ -20,15 +20,6 @@
             "streamTimerMinutes": 0,
             "streamTimerSeconds": 0
         },
-        "scripts-tool": [
-            {
-                "path": "/Applications/OBS.app/Contents/Resources/data/obs-plugins/frontend-tools/scripts/instant-replay.lua",
-                "settings": {
-                    "instant_replay.trigger": [],
-                    "source": "Instant Replay Script"
-                }
-            }
-        ]
     },
     "name": "ZUthon 2018",
     "preview_locked": false,
